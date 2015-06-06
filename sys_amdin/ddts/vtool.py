@@ -1,4 +1,4 @@
-#!/router/bin/python
+#!/usr/bin/python
 
 import os
 import commands
@@ -785,4 +785,4 @@ def main():
     args.func(args)
 
 if __name__ == "__main__":
-    m
+    main()
