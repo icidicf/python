@@ -7,11 +7,13 @@ import re
 import signal
 import time
 import string
+import logging
 def ctrl_c_handler(signo, frame):
 	print "invoke ctrl c go to close telnet ", signo
 	tn.write("exit\n")
 	tn.close()
 	sys.exit(0)
+
 
 def is_contain_str(mac_addr, str):
 	tn.write('scm\n')
@@ -30,6 +32,17 @@ def is_contain_str(mac_addr, str):
 	else:
 		return False
 
+def print_match_line(mac_addr):
+	tn.write('scm\n')
+	scm_output=tn.read_until('#')
+
+	re_line=mac_addr+'.*'
+	line = re.search(re_line, scm_output)
+
+	if line is not None:
+		print line.group()
+		logger.info(line.group())
+
 def wait_cm_online(mac_addr):
 	if is_contain_str(mac_addr, "w-online") == True:
 		print "%s is already w-online" % mac_addr
@@ -37,7 +50,7 @@ def wait_cm_online(mac_addr):
 
 	while is_contain_str(mac_addr, 'w-online') == False:
 		print "waiting %s w-online" % mac_addr
-		time.sleep(5)
+		time.sleep(10)
 
 def clear_cable_modem(mac_addr):
 	cmd = "clear cable modem " + mac_addr + " delete \n " 
@@ -65,13 +78,25 @@ def wait_cm_to_bm(mac_addr):
 	wait_cm_online(mac_addr)
 	while is_contain_str(mac_addr, 'bm') == False:
 		print "waiting %s enter BM" % mac_addr 
-		time.sleep(5)
+		time.sleep(10)
 
 def wait_cm_to_normal(mac_addr):
 	wait_cm_online(mac_addr)
 	while is_contain_str(mac_addr, 'bm') == True:
 		print "waiting %s return to  normal" % mac_addr 
-		time.sleep(5)
+		time.sleep(10)
+
+
+
+
+
+logger = logging.getLogger("bm_log")
+hdlr = logging.FileHandler('./lyp_bm_log')
+formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+hdlr.setFormatter(formatter)
+logger.addHandler(hdlr)
+logger.setLevel(logging.INFO)
+
 host = "80.1.1.2"
 user = "jelou"
 password = "lab123"
@@ -82,7 +107,8 @@ tn.write('term len 0\n')
 tn.read_until('#')
 
 is_in_bm = False
-mac_addr = r'7cb2.1b9c.8ed4'
+#mac_addr = r'7cb2.1b9c.8ed4'
+mac_addr = r'602a.d001.fc9a'
 signal.signal(signal.SIGINT, ctrl_c_handler)
 enter_transac_id = 1	
 leave_transac_id = 1	
@@ -91,18 +117,21 @@ enter_transac_id = get_cm_status_transac_id(mac_addr, r"Battery") + 1
 leave_transac_id = get_cm_status_transac_id(mac_addr, r"A/C") + 1 
 print "bm tran id %d , ac tran id %d "%  (enter_transac_id , leave_transac_id)
 while True:
+	print_match_line(mac_addr)
 	if is_contain_str(mac_addr,'bm') == False:
 		cmd = "test cable cm-status %s %d 9 010302010c \n "  % ( mac_addr, enter_transac_id)
 		print cmd
 		tn.write(cmd);
-		tn.read_until('#')
+		result = tn.read_until('#')
+		logger.info(result)
 		wait_cm_to_bm(mac_addr)
 		enter_transac_id += 1
 	else : 
 		cmd ="test cable cm-status %s %d 10 010302010c \n" % ( mac_addr ,leave_transac_id)
 		print cmd 
 		tn.write(cmd);
-		tn.read_until('#')
+		result = tn.read_until('#')
+		logger.info(result)
 		wait_cm_to_normal(mac_addr)
 		leave_transac_id += 1
 
