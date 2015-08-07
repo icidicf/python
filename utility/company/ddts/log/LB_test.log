@@ -1,0 +1,979 @@
+[G04_RP_0:/bootflash/jelou/CSCuu71571]$ exitSession log harddisk:tracelogs/system_shell_R0.log.20150618021130 closed.
+G04#exit
+Connection to 80.4.1.31 closed by foreign host.
+-bash-3.00$ ./g04 -c
+console connect
+Trying 10.74.58.252...
+telnet: Unable to connect to remote host: Connection refused
+-bash-3.00$ ./g04 -m
+console mgnt con-16 line 03
+Trying 10.74.58.252...
+Connected to sh-cable-con-16.cisco.com.
+Escape character is '^]'.
+The Access method for this console server has been changed.
+Pls login with your CEC credential.
+
+User Access Verification
+
+Password:
+Password:
+sh-cable-con-16>en
+Password:
+Password:
+sh-cable-con-16#clear line 03
+[confirm]
+ [OK]
+sh-cable-con-16#
+sh-cable-con-16#exit
+Connection to sh-cable-con-16.cisco.com closed by foreign host.
+-bash-3.00$ ./g04 -c
+console connect
+Trying 10.74.58.252...
+Connected to sh-cable-con-16.cisco.com.
+Escape character is '^]'.
+
+G04>
+G04>
+G04>
+G04>
+G04>
+G04>en
+G04#show ver
+Cisco IOS XE Software, Version 2015-06-16_04.05_jianjhu
+Cisco IOS Software, cBR  Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Experimental Version 15.6(20150604:040810) [mcp_dev_lb_ios-jianjhu-CSCuu68780 149]
+This software is an Engineering Special
+Copyright (c) 1986-2015 by Cisco Systems, Inc.
+Compiled Tue 16-Jun-15 03:42 by jianjhu
+
+
+Cisco IOS-XE software, Copyright (c) 2005-2015 by cisco Systems, Inc.
+All rights reserved.  Certain components of Cisco IOS-XE software are
+licensed under the GNU General Public License ("GPL") Version 2.0.  The
+software code licensed under GPL Version 2.0 is free software that comes
+with ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such
+GPL code under the terms of GPL Version 2.0.  For more details, see the
+documentation or "License Notice" file accompanying the IOS-XE software,
+or the applicable URL provided on the flyer accompanying the IOS-XE
+software.
+
+
+ROM: IOS-XE ROMMON
+
+G04 uptime is 1 day, 1 hour, 26 minutes
+Uptime for this control processor is 1 day, 1 hour, 30 minutes
+
+G04#
+G04#reload
+
+System configuration has been modified. Save? [yes/no]: yes
+Building configuration...
+[OK]
+Proceed with reload? [confirm]
+Jun 18 02:54:54.435 R0/0: %PMAN-5-EXITACTION: Process manager is exiting: process exit with reload chassis code
+
+
+Initializing Hardware ...
+
+ÿ
+
+System Bootstrap, Version 15.5(2r)S, RELEASE SOFTWARE
+Copyright (c) 1994-2015  by cisco Systems, Inc.
+
+Current image running: Boot ROM1
+
+Last reset cause: LocalSoftware
+
+CPUID: 0x000306e4 IvyBridge
+UCODE: 0x00000428_00000000
+Viper version register: 0x14121111
+Set Chassis Type to 13RU
+Cisco cBR-8  platform with 50331648 Kbytes of main memory
+
+rommon 1 > b bootflash:/jelou/CSCuu71571/cbrsup-packages-universalk9.2015-06-16_23.39_jelou.conf
+File size is 0x00003c50
+Located jelou/CSCuu71571/cbrsup-packages-universalk9.2015-06-16_23.39_jelou.conf
+Image size 15440 inode num 596765, bks cnt 4 blk size 8*512
+#
+File size is 0x02e21750
+Located jelou/CSCuu71571/cbrsup-rpbase.2015-06-16_23.39_jelou.SSA.pkg
+Image size 48371536 inode num 596767, bks cnt 11810 blk size 8*512
+########################################################################################################################################################################################################################################################################################################################################################################################################################################################################################
+Validating dev_mode signature
+
+dev_mode validation succeeded for token 000000000000
+dev_mode is PRIV
+cbr_check_bootparam: reboot param NOT FOUND
+Boot image size = 48371536 (0x2e21750) bytes
+Image boot from USB/Harddisk, init MGMT GigE..
+
+Package header rev 1 structure detected
+Calculating SHA-1 hash...done
+validate_package: SHA-1 hash:
+        calculated 386d7092:7f1c6789:9d20d3e1:640259f2:5c5fc5b2
+        expected   386d7092:7f1c6789:9d20d3e1:640259f2:5c5fc5b2
+
+RSA Signed DEVELOPMENT Image Signature Verification Successful.
+Package Load Test Latency : 551 msec
+validate_package: Image validated
+Validating dev_mode signature
+
+dev_mode validation succeeded for token 000000000000
+dev_mode is PRIV
+Booting image with bootparam="root=/dev/ram rw console=ttyS1,9600 max_loop=64 bigphysarea=13000 reboot=acpi SR_BOOT=bootflash:/jelou/CSCuu71571/cbrsup-packages-universalk9.2015-06-16_23.39_jelou.conf"
+boot_linux:calling uefi_launch_linux
+uefi_launch_linux: Launching the kernel....
+%IOSXEBOOT-4-BOOT_SRC: (rp/0): Non-HD Boot
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, cBR  Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Experimental Version 15.6(20150616:101904) [mcp_dev_lb_ios-jelou-CSCuu71571_lb_6_17 111]
+This software is an Engineering Special
+Copyright (c) 1986-2015 by Cisco Systems, Inc.
+Compiled Tue 16-Jun-15 23:10 by jelou
+
+
+
+Cisco IOS-XE software, Copyright (c) 2005-2015 by cisco Systems, Inc.
+All rights reserved.  Certain components of Cisco IOS-XE software are
+licensed under the GNU General Public License ("GPL") Version 2.0.  The
+software code licensed under GPL Version 2.0 is free software that comes
+with ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such
+GPL code under the terms of GPL Version 2.0.  For more details, see the
+documentation or "License Notice" file accompanying the IOS-XE software,
+or the applicable URL provided on the flyer accompanying the IOS-XE
+software.
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+cisco cBR1013 (CBR) processor (revision CBR) with 3635021K/6147K bytes of memory.
+Processor board ID FXS175106MM
+32768K bytes of non-volatile configuration memory.
+50331648K bytes of physical memory.
+7739391K bytes of eUSB flash at bootflash:.
+97620256K bytes of SATA hard disk at harddisk:.
+
+IPDR session created: name TI-CM-STATUS, id 1, description: TI-CM-STATUS
+IPDR session created: name TI-CM-US, id 2, description: TI-CM-US
+IPDR session created: name EV-CPE-TYPE, id 3, description: EV-CPE-TYPE
+IPDR session created: name SAMIS-TYPE1, id 4, description: SAMIS-TYPE1
+IPDR session created: name DS_UTIL, id 5, description: DS_UTIL
+IPDR session created: name TOPO, id 6, description: TOPO
+IPDR session created: name SFLOW, id 7, description: SFLOW
+IPDR session created: name DS-UTIL, id 8, description: DS-UTIL
+IPDR session created: name US-UTL, id 9, description: US-UTL
+IPDR session created: name SAMIS-TYPE2, id 10, description: SAMIS-TYPE2
+IPDR session created: name DIAG, id 11, description: DIAG
+IPDR session created: name DIAG_DET, id 12, description: DIAG_DET
+IPDR session created: name DIAG-EVNT, id 13, description: DIAG-EVENT
+IPDR session created: name SMAMIS, id 14, description: SAMIS
+IPDR session created: name t, id 20, description: t
+IPDR collector (collector1) create.
+IPDR collector (collector2) create.
+IPDR collector (collector1) is associated to session 1.
+IPDR collector (collector2) is associated to session 1.
+IPDR collector (collector1) is associated to session 2.
+IPDR collector (collector2) is associated to session 2.
+IPDR collector (collector1) is associated to session 3.
+IPDR collector (collector2) is associated to session 3.
+IPDR collector (collector1) is associated to session 4.
+IPDR collector (collector2) is associated to session 4.
+IPDR collector (collector1) is associated to session 5.
+IPDR collector (collector2) is associated to session 5.
+IPDR collector (collector1) is associated to session 6.
+IPDR collector (collector2) is associated to session 6.
+IPDR collector (collector1) is associated to session 7.
+IPDR collector (collector2) is associated to session 7.
+IPDR collector (collector1) is associated to session 8.
+IPDR collector (collector2) is associated to session 8.
+IPDR collector (collector1) is associated to session 9.
+IPDR collector (collector2) is associated to session 9.
+IPDR collector (collector1) is associated to session 10.
+IPDR collector (collector2) is associated to session 10.
+IPDR collector (collector1) is associated to session 11.
+IPDR collector (collector2) is associated to session 11.
+IPDR collector (collector1) is associated to session 12.
+IPDR collector (collector2) is associated to session 12.
+IPDR collector (collector1) is associated to session 13.
+IPDR collector (collector2) is associated to session 13.
+IPDR collector (collector1) is associated to session 14.
+IPDR collector (collector2) is associated to session 14.
+IPDR collector (collector1) is associated to session 20.
+IPDR exporter is now started.
+Packetcable Multimedia is Enabled
+Packetcable DQOS is Enabled
+Class set to 1:N for Redundancy group (0)
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set ttion profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+%Modulation profile set to 121
+% There may not be enough space available to collect the complete crashinfo
+% It would be advisable to have 283008 bytes free space on bootflash:crashinfo_RP_00_00
+
+
+Press RETURN to get started!
+
+
+G04>
+G04>
+G04>
+G04>
+G04>en
+G04#scm
+                                                                                       D
+MAC Address    IP Address      I/F           MAC               Prim  RxPwr  Timing Num I
+                                             State             Sid   (dBmv) Offset CPE P
+
+G04#
+G04#
+G04#
+G04#scm
+                                                                                       D
+MAC Address    IP Address      I/F           MAC               Prim  RxPwr  Timing Num I
+                                             State             Sid   (dBmv) Offset CPE P
+
+G04#scm
+                                                                                       D
+MAC Address    IP Address      I/F           MAC               Prim  RxPwr  Timing Num I
+                                             State             Sid   (dBmv) Offset CPE P
+
+G04#
+G04#
+G04#scm
+                                                                                       D
+MAC Address    IP Address      I/F           MAC               Prim  RxPwr  Timing Num I
+                                             State             Sid   (dBmv) Offset CPE P
+c8fb.26a6.c66e 93.3.0.32       C9/0/0/U3     init(o)           1     -1.00  1802   0   N
+c8fb.26a6.c3e0 93.3.0.16       C9/0/0/UB     w-online          2     -0.50  1792   0   N
+c8fb.26a6.c0c2 93.3.0.19       C9/0/0/U2     init(o)           3     -1.50  1802   0   N
+c8fb.26a6.c4d2 93.3.0.15       C9/0/0/UB     w-online          4     -1.00  1782   0   N
+c8fb.26a6.c0b6 93.3.0.24       C9/0/0/UB     init(o)           5     -1.00  1533   0   N
+c8fb.26a6.bf5c ---             C9/0/0/U1     init6(s)          6     -1.50  1800   0   N
+c8fb.26a6.c706 93.3.0.14       C9/0/0/UB     w-online          7     -1.00  1794   0   N
+c8fb.26a6.c566 93.3.0.40       C9/0/0/UB     w-online          8     -1.00  1811   0   N
+c8fb.26a6.bffe 93.3.0.33       C9/0/0/UB     w-online          9     -1.00  1809   0   N
+c8fb.26a6.c122 93.3.0.27       C9/0/0/UB     w-online          10    -0.50  1811   0   N
+c8fb.26a6.bf9e 93.3.0.22       C9/0/0/UB     w-online          11    -1.00  1812   0   N
+c8fb.26a6.c432 93.3.0.29       C9/0/0/UB     w-online          12    -1.00  1810   0   N
+c8fb.26a6.c0dc 93.3.0.35       C9/0/0/UB     w-online          13    -1.00  1812   0   N
+c8fb.26a6.bff4 93.3.0.31       C9/0/0/UB     w-online          14    -0.50  1813   0   N
+c8fb.26a6.c42e 93.3.0.39       C9/0/0/UB     w-online          15    -1.00  1812   0   N
+c8fb.26a6.bf4c ---             C9/0/0/U1     init(rc)          16    -1.00  1782   0   N
+c8fb.26a6.bf90 93.3.0.26       C9/0/0/UB     reject(na)        25    -1.00  1812   0   N
+c8fb.26a6.c62c 93.3.0.21       C9/0/0/UB     init(o)           28    -5.50  1796   0   N
+c8fb.26a6.c696 93.3.0.30       C9/0/0/UB     init(o)           29    -1.00  1529   0   N
+c8fb.26a6.c56c 93.3.0.17       C9/0/0/UB     init(o)           31    -1.00  1780   0   N
+c8fb.26a6.c486 ---             C9/0/0/U1     init6(s)          36    -1.00  1799   0   N
+c8fb.26a6.c608 ---             C9/0/0/U1     init6(s)          38    -1.50  1799   0   N
+c8fb.26a6.c088 ---             C9/0/0/U3     init6(s)          40    -1.00  1797   0   N
+c8fb.26a6.c02c ---             C9/0/0/U2     init6(s)          44    -1.00  1794   0   N
+
+G04#
+G04#
+G04#sc
+% Bad IP address or host name% Unknown command or computer name, or unable to find computer address
+G04#
+G04#scm
+                                                                                       D
+MAC Address    IP Address      I/F           MAC               Prim  RxPwr  Timing Num I
+                                             State             Sid   (dBmv) Offset CPE P
+c8fb.26a6.c66e 93.3.0.32       C9/0/0/UB     init(o)           1     0.00   1802   0   N
+c8fb.26a6.c3e0 93.3.0.16       C9/0/0/UB     w-online          2     -0.50  1792   0   N
+c8fb.26a6.c0c2 93.3.0.19       C9/0/0/UB     init(o)           3     -1.50  1802   0   N
+c8fb.26a6.c4d2 93.3.0.15       C9/0/0/UB     w-online          4     -1.00  1781   0   N
+c8fb.26a6.c0b6 93.3.0.24       C9/0/0/UB     reject(na)        5     -1.00  1533   0   N
+c8fb.26a6.bf5c ---             C9/0/0/U1     init(io)          6     -1.50  1800   0   N
+c8fb.26a6.c706 93.3.0.14       C9/0/0/UB     w-online          7     -1.00  1794   0   N
+c8fb.26a6.c566 93.3.0.40       C9/0/0/UB     w-online          8     -1.00  1811   0   N
+c8fb.26a6.bffe 93.3.0.33       C9/0/0/UB     w-online          9     -1.00  1809   0   N
+c8fb.26a6.c122 93.3.0.27       C9/0/0/UB     w-online          10    -0.50  1811   0   N
+c8fb.26a6.bf9e 93.3.0.22       C9/0/0/UB     w-online          11    -1.00  1812   0   N
+c8fb.26a6.c432 93.3.0.29       C9/0/0/UB     w-online          12    -1.00  1810   0   N
+c8fb.26a6.c0dc 93.3.0.35       C9/0/0/UB     w-online          13    -1.00  1812   0   N
+c8fb.26a6.bff4 93.3.0.31       C9/0/0/UB     w-online          14    -0.50  1813   0   N
+c8fb.26a6.c42e 93.3.0.39       C9/0/0/UB     w-online          15    -1.00  1812   0   N
+c8fb.26a6.bf4c ---             C9/0/0/U1     init6(s)          16    -1.00  1782   0   N
+c8fb.26a6.bf90 93.3.0.26       C9/0/0/UB     reject(na)        25    -1.00  1812   0   N
+c8fb.26a6.c62c 93.3.0.21       C9/0/0/UB     w-online          28    -1.00  1796   0   N
+c8fb.26a6.c696 93.3.0.30       C9/0/0/UB     w-online          29    -0.50  1798   0   N
+c8fb.26a6.c56c 93.3.0.17       C9/0/0/UB     init(o)           31    -1.00  1780   0   N
+c8fb.26a6.c486 ---             C9/0/0/U1     init6(s)          36    -1.00  1799   0   N
+c8fb.26a6.c608 ---             C9/0/0/U1     init6(s)          38    -1.50  1799   0   N
+c8fb.26a6.c088 ---             C9/0/0/U3     init6(s)          40    -1.00  1797   0   N
+c8fb.26a6.c02c ---             C9/0/0/U2     init6(s)          44    -1.00  1794   0   N
+
+G04#
+G04#
+G04#
+G04#
+G04#
+G04#
+G04#show cab
+G04#show cablelo
+G04#show cable lo
+G04#show cable load
+G04#show cable load-balance
+DOCSIS LB Enabled: Yes
+DOCSIS 3.0 LB Static Enabled: Yes
+DOCSIS 3.0 LB Dynamic Enabled: Yes
+DOCSIS     Status Interval DCC mask  Policy     Method Threshold
+Group                      /UCC                 DS/US  M/E/U/P/S
+1          RE     150      0x78(1)/N 0          m/m    3/10/70/70/50
+2          GE     150      0x08(4)/N 0          m/m    3/10/70/70/50
+3          GE     150      0x78(1)/N 0          m/m    3/10/70/70/50
+5          GE     150      0x08(4)/N 0          m/m    3/10/70/70/50
+
+DOCSIS 3.0 General LB
+MD       FN  Group ID   S Intv DCC mask  Policy     Mtd MD-CM-SG  Threshold
+                               /UCC                 D/U           M/E/U/P/S
+Ca9/0/0  1   2147655680 E 60   0x08(4)/N 0          u/u 0x1500B01 3/10/70/70/50
+
+G04#
+G04#
+G04#
+G04#
+telnet> q
+Connection to sh-cable-con-16.cisco.com closed.
+-bash-3.00$ ./g04
+ip connnect
+Trying 80.4.1.31...
+Connected to 80.4.1.31.
+Escape character is '^]'.
+
+G04#show cab
+G04#show cablelo
+G04#show cable lo
+G04#show cable load
+G04#show cable load-balance
+DOCSIS LB Enabled: Yes
+DOCSIS 3.0 LB Static Enabled: Yes
+DOCSIS 3.0 LB Dynamic Enabled: Yes
+DOCSIS     Status Interval DCC mask  Policy     Method Threshold
+Group                      /UCC                 DS/US  M/E/U/P/S
+1          RE     150      0x78(1)/N 0          m/m    3/10/70/70/50
+2          GE     150      0x08(4)/N 0          m/m    3/10/70/70/50
+3          GE     150      0x78(1)/N 0          m/m    3/10/70/70/50
+5          GE     150      0x08(4)/N 0          m/m    3/10/70/70/50
+
+DOCSIS 3.0 General LB
+MD       FN  Group ID   S Intv DCC mask  Policy     Mtd MD-CM-SG  Threshold
+                               /UCC                 D/U           M/E/U/P/S
+Ca9/0/0  1   2147655680 E 60   0x08(4)/N 0          u/u 0x1500B01 3/10/70/70/50
+
+G04#
+G04#
+G04#
+G04#show cabl
+G04#show cable load
+G04#show cable load-balance do
+G04#show cable load-balance docsis-group fn 1 md c9/0/0
+DOCSIS LB Enabled: Yes
+DOCSIS 3.0 LB Static Enabled: Yes
+DOCSIS 3.0 LB Dynamic Enabled: Yes
+
+DOCSIS 3.0 General LB
+MD       FN  Group ID   S Intv DCC mask  Policy     Mtd MD-CM-SG  Threshold
+                               /UCC                 D/U           M/E/U/P/S
+Ca9/0/0  1   2147655680 E 60   0x08(4)/N 0          u/u 0x1500B01 3/10/70/70/50
+
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 ta
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 target
+Interface            State      Group      Target
+In9/0/0:0(93 MHz)    initial    2147655680
+Us9/0/2:0            up         2147655680
+Us9/0/2:1            up         2147655680
+Us9/0/2:2            initial    2147655680
+Us9/0/2:3            up         2147655680
+In9/0/0:1(99 MHz)    up         2147655680
+Us9/0/2:0            up         2147655680
+Us9/0/2:1            up         2147655680
+Us9/0/2:2            initial    2147655680
+Us9/0/2:3            up         2147655680
+In9/0/0:2(105 MHz)   up         2147655680
+Us9/0/2:0            up         2147655680
+Us9/0/2:1            up         2147655680
+Us9/0/2:2            initial    2147655680
+Us9/0/2:3            up         2147655680
+In9/0/0:3(111 MHz)   up         2147655680
+Us9/0/2:0            up         2147655680
+Us9/0/2:1            up         2147655680
+Us9/0/2:2            initial    2147655680
+Us9/0/2:3            up         2147655680
+In9/0/0:4(117 MHz)   initial    2147655680
+Us9/0/2:0            up         2147655680
+Us9/0/2:1            up         2147655680
+Us9/0/2:2            initial    2147655680
+Us9/0/2:3            up         2147655680
+In9/0/0:5(123 MHz)   initial    2147655680
+Us9/0/2:0            up         2147655680
+Us9/0/2:1            up         2147655680
+Us9/0/2:2            initial    2147655680
+Us9/0/2:3            up         2147655680
+In9/0/0:6(129 MHz)   initial    2147655680
+Us9/0/2:0            up         2147655680
+Us9/0/2:1            up         2147655680
+Us9/0/2:2            initial    2147655680
+Us9/0/2:3            up         2147655680
+In9/0/0:7(135 MHz)   initial    2147655680
+Us9/0/2:0            up         2147655680
+Us9/0/2:1            up         2147655680
+Us9/0/2:2            initial    2147655680
+Us9/0/2:3            up         2147655680
+In9/0/0:8(141 MHz)   initial    2147655680
+Us9/0/2:0            up         2147655680
+Us9/0/2:1            up         2147655680
+Us9/0/2:2            initial    2147655680
+Us9/0/2:3            up         2147655680
+In9/0/0:9(147 MHz)   initial    2147655680
+Us9/0/2:0            up         2147655680
+Us9/0/2:1            up         2147655680
+Us9/0/2:2            initial    2147655680
+Us9/0/2:3            up         2147655680
+In9/0/0:10(153 MHz)  initial    2147655680
+Us9/0/2:0            up         2147655680
+
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 target wi
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 target wideband
+Interface        Bg-Id    State      Group      Target
+Wi9/0/0:0        28673    up         2147655680
+Wi9/0/0:1        28674    up         2147655680
+Wi9/0/0:2        28675    up         2147655680
+Wi9/0/0:3        28676    up         2147655680
+Wi9/0/0:4        28677    up         2147655680
+Wi9/0/0:5        28678    up         2147655680
+Wi9/0/0:6        28679    up         2147655680
+Wi9/0/0:7        28680    up         2147655680
+
+G04#show cab
+G04#show cable mode
+G04#show cable modem wi
+G04#show cable modem wideband ch
+G04#show cable modem wideband channel
+MAC Address    IP Address      I/F           MAC               DSxUS Primary
+                                             State                   WB
+c8fb.26a6.c66e 93.3.0.32       C9/0/0/UB     w-online          8x1   Wi9/0/0:0
+c8fb.26a6.c3e0 93.3.0.16       C9/0/0/UB     w-online          8x1   Wi9/0/0:7
+c8fb.26a6.c0c2 93.3.0.19       C9/0/0/UB     init(o)           8x1   Wi9/0/0:0
+c8fb.26a6.c4d2 93.3.0.15       C9/0/0/UB     w-online          8x1   Wi9/0/0:4
+c8fb.26a6.c0b6 93.3.0.24       C9/0/0/UB     reject(na)        8x1   Wi9/0/0:0
+c8fb.26a6.bf5c 93.3.0.13       C9/0/0/UB     init(o)           8x1   Wi9/0/0:0
+c8fb.26a6.c706 93.3.0.14       C9/0/0/UB     w-online          8x1   Wi9/0/0:2
+c8fb.26a6.c566 93.3.0.40       C9/0/0/UB     w-online          8x1   Wi9/0/0:0
+c8fb.26a6.bffe 93.3.0.33       C9/0/0/UB     w-online          8x1   Wi9/0/0:6
+c8fb.26a6.c122 93.3.0.27       C9/0/0/UB     w-online          8x1   Wi9/0/0:4
+c8fb.26a6.bf9e 93.3.0.22       C9/0/0/UB     w-online          8x1   Wi9/0/0:0
+c8fb.26a6.c432 93.3.0.29       C9/0/0/UB     w-online          8x1   Wi9/0/0:2
+c8fb.26a6.c0dc 93.3.0.35       C9/0/0/UB     w-online          8x1   Wi9/0/0:3
+c8fb.26a6.bff4 93.3.0.31       C9/0/0/UB     w-online          8x1   Wi9/0/0:6
+c8fb.26a6.c42e 93.3.0.39       C9/0/0/UB     w-online          8x1   Wi9/0/0:7
+c8fb.26a6.bf4c 93.3.0.23       C9/0/0/UB     w-online          8x1   Wi9/0/0:1
+c8fb.26a6.bf90 93.3.0.26       C9/0/0/UB     w-online          8x1   Wi9/0/0:1
+c8fb.26a6.c62c 93.3.0.21       C9/0/0/UB     w-online          8x1   Wi9/0/0:2
+c8fb.26a6.c696 93.3.0.30       C9/0/0/UB     w-online          8x1   Wi9/0/0:7
+c8fb.26a6.c56c 93.3.0.17       C9/0/0/UB     w-online          8x1   Wi9/0/0:7
+c8fb.26a6.c486 93.3.0.11       C9/0/0/UB     w-online          8x1   Wi9/0/0:4
+c8fb.26a6.c608 93.3.0.42       C9/0/0/UB     w-online          8x1   Wi9/0/0:5
+c8fb.26a6.c088 93.3.0.20       C9/0/0/UB     w-online          8x1   Wi9/0/0:3
+c8fb.26a6.c02c 93.3.0.18       C9/0/0/UB     w-online          8x1   Wi9/0/0:5
+
+G04#show cable load-balance docsis-group fn 1 md c9/0/0
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 cm
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 cm-rank ?
+  <1-4294967295>  bgid
+
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 cm-rank 28673
+cm_thrput_classifer cost 0 ns for size 3
+class 0:[0bits ~ 1bits]
+    c8fb.26a6.c566 thrput: 0
+    c8fb.26a6.bf9e thrput: 0
+    c8fb.26a6.c66e thrput: 0
+
+G04#scm
+                                                                                       D
+MAC Address    IP Address      I/F           MAC               Prim  RxPwr  Timing Num I
+                                             State             Sid   (dBmv) Offset CPE P
+c8fb.26a6.c66e 93.3.0.32       C9/0/0/UB     w-online          1     -1.50  1801   1   N
+c8fb.26a6.c3e0 93.3.0.16       C9/0/0/UB     w-online          2     -1.00  1800   1   N
+c8fb.26a6.c0c2 93.3.0.19       C9/0/0/UB     init(o)           3     -0.50  1780   0   N
+c8fb.26a6.c4d2 93.3.0.15       C9/0/0/UB     w-online          4     -1.00  1781   1   N
+c8fb.26a6.c0b6 93.3.0.24       C9/0/0/UB     reject(na)        5     -1.00  1802   0   N
+c8fb.26a6.bf5c 93.3.0.13       C9/0/0/UB     init(o)           6     -0.50  1797   0   N
+c8fb.26a6.c706 93.3.0.14       C9/0/0/UB     w-online          7     -1.00  1801   1   N
+c8fb.26a6.c566 93.3.0.40       C9/0/0/UB     w-online          8     -1.00  1803   1   N
+c8fb.26a6.bffe 93.3.0.33       C9/0/0/UB     w-online          9     -1.50  1803   1   N
+c8fb.26a6.c122 93.3.0.27       C9/0/0/UB     w-online          10    -0.50  1801   1   N
+c8fb.26a6.bf9e 93.3.0.22       C9/0/0/UB     w-online          11    -1.50  1799   1   N
+c8fb.26a6.c432 93.3.0.29       C9/0/0/UB     w-online          12    -1.50  1799   1   N
+c8fb.26a6.c0dc 93.3.0.35       C9/0/0/UB     w-online          13    -1.00  1799   1   N
+c8fb.26a6.bff4 93.3.0.31       C9/0/0/UB     w-online          14    -0.50  1797   1   N
+c8fb.26a6.c42e 93.3.0.39       C9/0/0/UB     w-online          15    -1.50  1798   1   N
+c8fb.26a6.bf4c 93.3.0.23       C9/0/0/UB     w-online          16    -1.00  1796   1   N
+c8fb.26a6.bf90 93.3.0.26       C9/0/0/UB     w-online          25    -0.50  1809   1   N
+c8fb.26a6.c62c 93.3.0.21       C9/0/0/UB     w-online          28    -1.50  1801   1   N
+c8fb.26a6.c696 93.3.0.30       C9/0/0/UB     w-online          29    -0.50  1799   1   N
+c8fb.26a6.c56c 93.3.0.17       C9/0/0/UB     w-online          31    -1.00  1797   1   N
+c8fb.26a6.c486 93.3.0.11       C9/0/0/UB     w-online          36    -1.00  1797   1   N
+c8fb.26a6.c608 93.3.0.42       C9/0/0/UB     w-online          38    -1.50  1784   1   N
+c8fb.26a6.c088 93.3.0.20       C9/0/0/UB     w-online          40    -1.50  1798   1   N
+c8fb.26a6.c02c 93.3.0.18       C9/0/0/UB     w-online          44    -1.00  1780   1   N
+
+G04#
+G04#show cab
+G04#show cable load
+G04#show cable load-balance do
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 rf
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 rfch-util
+Interface     Pstate    Sstate    Throughput(Kbps)    Util
+In9/0/0:0     init      up        29                  0
+In9/0/0:1     up        up        41                  0
+In9/0/0:2     up        up        42                  0
+In9/0/0:3     up        up        41                  0
+In9/0/0:4     up        up        3980                2
+In9/0/0:5     init      up        3933                2
+In9/0/0:6     up        up        3966                2
+In9/0/0:7     up        up        3962                2
+In9/0/0:8     init      up        4428                3
+In9/0/0:9     up        up        3493                2
+In9/0/0:10    init      up        3485                2
+In9/0/0:11    up        up        4332                3
+In9/0/0:12    up        up        29                  0
+In9/0/0:13    init      up        29                  0
+In9/0/0:14    init      up        29                  0
+In9/0/0:15    up        up        29                  0
+In9/0/0:16    up        up        29                  0
+In9/0/0:17    up        up        31                  0
+In9/0/0:18    init      up        29                  0
+In9/0/0:19    init      up        29                  0
+In9/0/0:20    init      up        31                  0
+In9/0/0:21    up        up        29                  0
+In9/0/0:22    init      up        29                  0
+In9/0/0:23    up        up        29                  0
+In9/0/0:24    up        up        32                  0
+In9/0/0:25    up        up        29                  0
+In9/0/0:26    up        up        29                  0
+In9/0/0:27    up        up        29                  0
+In9/0/0:28    up        up        3971                2
+In9/0/0:29    up        up        2986                2
+In9/0/0:30    up        up        3083                2
+In9/0/0:31    up        up        3779                2
+In9/0/0:32    init      up        3521                2
+In9/0/0:33    init      up        3415                2
+In9/0/0:34    init      up        3456                2
+In9/0/0:35    init      up        3410                2
+In9/0/0:36    init      up        29                  0
+In9/0/0:37    init      up        29                  0
+In9/0/0:38    init      up        29                  0
+In9/0/0:39    init      up        29                  0
+In9/0/0:40    init      up        29                  0
+In9/0/0:41    init      up        29                  0
+In9/0/0:42    init      up        29                  0
+In9/0/0:43    init      up        29                  0
+In9/0/0:44    init      up        29                  0
+In9/0/0:45    init      up        29                  0
+In9/0/0:46    init      up        29                  0
+In9/0/0:47    init      up        29                  0
+In9/0/0:48    init      up        29                  0
+In9/0/0:49    init      up        29                  0
+In9/0/0:50    init      up        29                  0
+In9/0/0:51    init      up        29                  0
+In9/0/0:52    init      up        29                  0
+In9/0/0:53    init      up        29                  0
+In9/0/0:54    init      up        29                  0
+In9/0/0:55    init      up        29                  0
+In9/0/0:56    init      up        29                  0
+In9/0/0:57    init      up        29                  0
+In9/0/0:58    init      up        29                  0
+In9/0/0:59    init      up        29                  0
+In9/0/0:60    init      up        29                  0
+In9/0/0:61    init      up        29                  0
+In9/0/0:62    init      up        29                  0
+In9/0/0:63    init      up        29                  0
+In9/0/0:64    NA        up        0                   0
+In9/0/0:65    NA        up        0                   0
+In9/0/0:66    NA        up        0                   0
+In9/0/0:67    NA        up        0                   0
+In9/0/0:68    NA        up        0                   0
+In9/0/0:69    NA        up        0                   0
+In9/0/0:70    NA        up        0                   0
+In9/0/0:71    NA        up        0                   0
+In9/0/0:72    NA        up        0                   0
+In9/0/0:73    NA        up        0                   0
+In9/0/0:74    NA        up        0                   0
+In9/0/0:75    NA        up        0                   0
+In9/0/0:76    NA        up        0                   0
+In9/0/0:77    NA        up        0                   0
+In9/0/0:78    NA        up        0                   0
+In9/0/0:79    NA        up        0                   0
+In9/0/0:80    NA        up        0                   0
+In9/0/0:81    NA        up        0                   0
+In9/0/0:82    NA        up        0                   0
+In9/0/0:83    NA        up        0                   0
+In9/0/0:84    NA        up        0                   0
+In9/0/0:85    NA        up        0                   0
+In9/0/0:86    NA        up        0                   0
+In9/0/0:87    NA        up        0                   0
+In9/0/0:88    NA        up        0                   0
+In9/0/0:89    NA        up        0                   0
+In9/0/0:90    NA        up        0                   0
+In9/0/0:91    NA        up        0                   0
+In9/0/0:92    NA        up        0                   0
+In9/0/0:93    NA        up        0                   0
+In9/0/0:94    NA        up        0                   0
+In9/0/0:95    NA        up        0                   0
+In9/0/0:96    NA        up        0                   0
+In9/0/0:97    NA        up        0                   0
+In9/0/0:98    NA        up        0                   0
+In9/0/0:99    NA        up        0                   0
+In9/0/0:100   NA        up        0                   0
+In9/0/0:101   NA        up        0                   0
+In9/0/0:102   NA        up        0                   0
+In9/0/0:103   NA        up        0                   0
+In9/0/0:104   NA        up        0                   0
+
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 load
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 load wi
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 load wideband
+DOCSIS load-balancing wide band load
+Interface     Size    Group      Throughput(Kbps)/bw(Mbps)    Avg-Util Pending-In Pending-Out
+Wi9/0/0:0     8       2147655680                0/300         1                0           0
+Wi9/0/0:1     8       2147655680            10131/300         2                0           0
+Wi9/0/0:2     8       2147655680                0/300         1                0           0
+Wi9/0/0:3     8       2147655680                0/300         0                0           0
+Wi9/0/0:4     8       2147655680                0/300         0                0           0
+Wi9/0/0:5     8       2147655680                0/300         0                0           0
+Wi9/0/0:6     8       2147655680                0/300         1                0           0
+Wi9/0/0:7     8       2147655680            10169/300         2                0           0
+
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 load wideband
+DOCSIS load-balancing wide band load
+Interface     Size    Group      Throughput(Kbps)/bw(Mbps)    Avg-Util Pending-In Pending-Out
+Wi9/0/0:0     8       2147655680                0/300         1                0           0
+Wi9/0/0:1     8       2147655680            10161/300         5                0           0
+Wi9/0/0:2     8       2147655680            16909/300         7                0           0
+Wi9/0/0:3     8       2147655680             2807/300         3                0           0
+Wi9/0/0:4     8       2147655680                0/300         0                0           0
+Wi9/0/0:5     8       2147655680             1658/300         0                0           0
+Wi9/0/0:6     8       2147655680                0/300         1                0           0
+Wi9/0/0:7     8       2147655680            10129/300         2                0           0
+
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 load wideband
+DOCSIS load-balancing wide band load
+Interface     Size    Group      Throughput(Kbps)/bw(Mbps)    Avg-Util Pending-In Pending-Out
+Wi9/0/0:0     8       2147655680                0/300         1                0           0
+Wi9/0/0:1     8       2147655680            10185/300         7                0           0
+Wi9/0/0:2     8       2147655680            30383/300         11               0           0
+Wi9/0/0:3     8       2147655680             5354/300         6                0           0
+Wi9/0/0:4     8       2147655680                0/300         1                0           0
+Wi9/0/0:5     8       2147655680             3361/300         1                0           0
+Wi9/0/0:6     8       2147655680                0/300         1                0           0
+Wi9/0/0:7     8       2147655680            10109/300         2                0           0
+
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 load wideband
+DOCSIS load-balancing wide band load
+Interface     Size    Group      Throughput(Kbps)/bw(Mbps)    Avg-Util Pending-In Pending-Out
+Wi9/0/0:0     8       2147655680                0/300         1                0           0
+Wi9/0/0:1     8       2147655680            10185/300         7                0           0
+Wi9/0/0:2     8       2147655680            30383/300         11               0           0
+Wi9/0/0:3     8       2147655680             5354/300         6                0           0
+Wi9/0/0:4     8       2147655680                0/300         1                0           0
+Wi9/0/0:5     8       2147655680             3361/300         1                0           0
+Wi9/0/0:6     8       2147655680                0/300         1                0           0
+Wi9/0/0:7     8       2147655680            10109/300         2                0           0
+
+G04#
+G04#show cab
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 ta
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 target wi
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 target wideband
+Interface        Bg-Id    State      Group      Target
+Wi9/0/0:0        28673    up         2147655680
+Wi9/0/0:1        28674    up         2147655680 Wi9/0/0:0  ...
+Wi9/0/0:2        28675    up         2147655680 Wi9/0/0:0  ...
+Wi9/0/0:3        28676    up         2147655680 Wi9/0/0:0  ...
+Wi9/0/0:4        28677    up         2147655680
+Wi9/0/0:5        28678    up         2147655680
+Wi9/0/0:6        28679    up         2147655680
+Wi9/0/0:7        28680    up         2147655680
+
+G04#
+G04#show cable load-balance docsis-group fn 1 md c9/0//0
+G04#show cable load-balance docsis-group fn 1 md c9/0/
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 pe
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 pending
+Modem          Grp Id     Primary RF/RCC                      MD/TCS            Action Active Retries
+                          Src               Target            Src      Target           Time
+G04#
+G04#
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 target wideband
+Interface        Bg-Id    State      Group      Target
+Wi9/0/0:0        28673    up         2147655680
+Wi9/0/0:1        28674    up         2147655680 Wi9/0/0:0  ...
+Wi9/0/0:2        28675    up         2147655680 Wi9/0/0:0  ...
+Wi9/0/0:3        28676    up         2147655680 Wi9/0/0:0  ...
+Wi9/0/0:4        28677    up         2147655680 Wi9/0/0:0
+Wi9/0/0:5        28678    up         2147655680
+Wi9/0/0:6        28679    up         2147655680
+Wi9/0/0:7        28680    up         2147655680
+
+G04#
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 target wideband
+Interface        Bg-Id    State      Group      Target
+Wi9/0/0:0        28673    up         2147655680
+Wi9/0/0:1        28674    up         2147655680 Wi9/0/0:0  ...
+Wi9/0/0:2        28675    up         2147655680 Wi9/0/0:0  ...
+Wi9/0/0:3        28676    up         2147655680 Wi9/0/0:0  ...
+Wi9/0/0:4        28677    up         2147655680 Wi9/0/0:0
+Wi9/0/0:5        28678    up         2147655680
+Wi9/0/0:6        28679    up         2147655680
+Wi9/0/0:7        28680    up         2147655680
+
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 load wideband
+DOCSIS load-balancing wide band load
+Interface     Size    Group      Throughput(Kbps)/bw(Mbps)    Avg-Util Pending-In Pending-Out
+Wi9/0/0:0     8       2147655680                0/300         1                0           0
+Wi9/0/0:1     8       2147655680            10112/300         16               0           0
+Wi9/0/0:2     8       2147655680            81115/300         30               0           0
+Wi9/0/0:3     8       2147655680            15217/300         17               0           0
+Wi9/0/0:4     8       2147655680                0/300         4                0           0
+Wi9/0/0:5     8       2147655680            10157/300         3                0           0
+Wi9/0/0:6     8       2147655680                0/300         3                0           0
+Wi9/0/0:7     8       2147655680            10117/300         3                0           0
+
+G04#
+G04#show cab
+G04#show cableload
+G04#show cable load
+DOCSIS LB Enabled: Yes
+DOCSIS 3.0 LB Static Enabled: Yes
+DOCSIS 3.0 LB Dynamic Enabled: Yes
+DOCSIS     Status Interval DCC mask  Policy     Method Threshold
+Group                      /UCC                 DS/US  M/E/U/P/S
+1          RE     150      0x78(1)/N 0          m/m    3/10/70/70/50
+2          GE     150      0x08(4)/N 0          m/m    3/10/70/70/50
+3          GE     150      0x78(1)/N 0          m/m    3/10/70/70/50
+5          GE     150      0x08(4)/N 0          m/m    3/10/70/70/50
+
+DOCSIS 3.0 General LB
+MD       FN  Group ID   S Intv DCC mask  Policy     Mtd MD-CM-SG  Threshold
+                               /UCC                 D/U           M/E/U/P/S
+Ca9/0/0  1   2147655680 E 60   0x08(4)/N 0          u/u 0x1500B01 3/10/70/70/50
+
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 pending
+Modem          Grp Id     Primary RF/RCC                      MD/TCS            Action Active Retries
+                          Src               Target            Src      Target           Time
+c8fb.26a6.bf4c 2147655680 In9/0/0:6/2       In9/0/0:0/1       336/0x2  336/0x2  DBC    00:25  0
+G04#
+G04#
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 pending
+Modem          Grp Id     Primary RF/RCC                      MD/TCS            Action Active Retries
+                          Src               Target            Src      Target           Time
+c8fb.26a6.bf4c 2147655680 In9/0/0:6/2       In9/0/0:0/1       336/0x2  336/0x2  DBC    00:36  0
+G04#
+G04#show ru
+G04#show running-config inte
+G04#show running-config interface c9/0/0
+Building configuration...
+
+Current configuration : 667 bytes
+!
+interface Cable9/0/0
+ load-interval 30
+ downstream Integrated-Cable 9/0/0 rf-channel 0-31
+ upstream 0 Upstream-Cable 9/0/2 us-channel 0
+ upstream 1 Upstream-Cable 9/0/2 us-channel 1
+ upstream 2 Upstream-Cable 9/0/2 us-channel 2
+ upstream 3 Upstream-Cable 9/0/2 us-channel 3
+ no cable upstream 0 equalization-error-recovery
+ no cable upstream 1 equalization-error-recovery
+ no cable upstream 2 equalization-error-recovery
+ no cable upstream 3 equalization-error-recovery
+ cable downstream dsg timer 1
+ cable downstream dsg tg 20 channel 65
+ cable downstream dsg tg 40 channel 65
+ cable downstream dsg tg 100 channel 65
+ cable bundle 1
+ cable ip-init dual-stack
+end
+
+G04#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+G04(config)#inter
+G04(config)#interface c9/0/0
+G04(config-if)#no do
+G04(config-if)#no dow
+G04(config-if)#no downstream i
+G04(config-if)#no downstream integrated-Cable 9/0/0 rf
+G04(config-if)#no downstream integrated-Cable 9/0/0 rf-channel 0
+G04(config-if)#end
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 pending
+Modem          Grp Id     Primary RF/RCC                      MD/TCS            Action Active Retries
+                          Src               Target            Src      Target           Time
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 pending
+Modem          Grp Id     Primary RF/RCC                      MD/TCS            Action Active Retries
+                          Src               Target            Src      Target           Time
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 ta
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 target wi
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 target wideband
+Interface        Bg-Id    State      Group      Target
+Wi9/0/0:0        28673    up         2147655680
+Wi9/0/0:1        28674    up         2147655680 Wi9/0/0:0  ...
+Wi9/0/0:2        28675    up         2147655680 Wi9/0/0:0  ...
+Wi9/0/0:3        28676    up         2147655680 Wi9/0/0:0  ...
+Wi9/0/0:4        28677    up         2147655680 Wi9/0/0:0
+Wi9/0/0:5        28678    up         2147655680
+Wi9/0/0:6        28679    up         2147655680
+Wi9/0/0:7        28680    up         2147655680
+
+G04#
+G04#
+G04#
+G04#
+G04#show cable load-balance docsis-group fn 1 md c9/0/0 load wideband
+DOCSIS load-balancing wide band load
+Interface     Size    Group      Throughput(Kbps)/bw(Mbps)    Avg-Util Pending-In Pending-Out
+Wi9/0/0:0     8       2147655680                0/300         1                0           0
+Wi9/0/0:1     8       2147655680            10144/300         16               0           0
+Wi9/0/0:2     8       2147655680            81184/300         30               0           0
+Wi9/0/0:3     8       2147655680            15168/300         18               0           0
+Wi9/0/0:4     8       2147655680                0/300         4                0           0
+Wi9/0/0:5     8       2147655680            10122/300         3                0           0
+Wi9/0/0:6     8       2147655680                0/300         3                0           0
+Wi9/0/0:7     8       2147655680            10159/300         3                0           0
+
+G04#debug cab
+G04#debug cable load
+G04#debug cable load-balance
+CMTS load balancing debugging is on
+G04#debug cable load-balance  ?
+  auto       debug docsis lb d20 auto generation
+  bg_stats   debug load balancing bg stats
+  d30_algo   debug load balancing d30 dynamic algorithm
+  docsis-lb  debug docsis load balance
+  error      debug load balancing errors
+  interval   debug load balancing intervalIt is per second log.Be careful when enable it!
+  lbr        debug low bound rule lb
+  lcha       debug load balancing lcha
+  rfload     debug load balancing rfload
+  wbload     debug load balancing wb load
+  <cr>
+
