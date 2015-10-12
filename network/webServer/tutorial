@@ -1,0 +1,9 @@
+1, mv webpy to /usr/lyplib/python
+2, export PYTHONPATH='/usr/lyplib/python/webpy'
+3, change the port to avoid conflict  run the app 
+
+reference:
+http://www.dreamsyssoft.com/python-scripting-tutorial/create-simple-rest-web-service-with-python.php
+http://webpy.org/cookbook/
+http://stackoverflow.com/questions/14444913/web-py-specify-address-and-port
+
