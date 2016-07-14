@@ -18,7 +18,7 @@ xfmt = md.DateFormatter('%Y-%m-%d %H:%M:%S')
 ax.xaxis.set_major_formatter(xfmt)
 for d in datenums:
         print d
-        plt.xticks(np.arange(min(datenums), max(datenums), 2.0 ))
-        plt.plot(datenums,values)
-        plt.show()
+plt.xticks(np.arange(min(datenums), max(datenums), 2.0 ))
+plt.plot(datenums,values)
+plt.show()
 
